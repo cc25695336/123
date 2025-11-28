@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>台灣美食與景點查詢</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Noto Sans TC", sans-serif;
+        background: #f3f3f3;
+        color: #333;
+    }
+
+    header {
+        background: #4b79a1;
+        background: linear-gradient(135deg, #4b79a1, #283e51);
+        padding: 25px;
+        text-align: center;
+        color: white;
+        font-size: 28px;
+        letter-spacing: 2px;
+        font-weight: bold;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #2c3e50;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 6px;
+        background: #e4e4e4;
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .content {
+        margin-top: 10px;
+        display: none;
+        line-height: 1.6;
+        color: #555;
+    }
+</style>
+
+</head>
+<body>
+
+<header>台灣美食小吃與景點查詢</header>
+
+<div class="container">
+
+    <!-- 台北 -->
+    <div class="card" onclick="toggleContent('taipei-food')">
+        <div class="title">台北｜阿宗麵線</div>
+        <div class="tag">美食小吃</div>
+        <div class="content" id="taipei-food">
+            台北西門町的名店，以濃郁柴魚湯頭與大腸、蚵仔著名。  
+            人潮絡繹不絕，屬台北代表性街頭小吃！
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleContent('taipei-spot')">
+        <div class="title">台北｜象山觀景台</div>
+        <div class="tag">景點</div>
+        <div class="content" id="taipei-spot">
+            北市最佳夜景地點之一，可眺望 101 大樓與台北市區。  
+            徒步約 20 分鐘即可到達觀景平台。
+        </div>
+    </div>
+
+    <!-- 台中 -->
+    <div class="card" onclick="toggleContent('taichung-food')">
+        <div class="title">台中｜宮原眼科冰淇淋</div>
+        <div class="tag">美食小吃</div>
+        <div class="content" id="taichung-food">
+            濃厚系冰淇淋搭配各種餅乾，是台中人氣必訪的甜點店。  
+            店內裝潢復古又華麗，非常適合拍照。
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleContent('taichung-spot')">
+        <div class="title">台中｜審計新村</div>
+        <div class="tag">景點</div>
+        <div class="content" id="taichung-spot">
+            結合市集、文創、咖啡與小店的文青聚集地。  
+            假日氣氛輕鬆，很適合散步與拍照。
+        </div>
+    </div>
+
+    <!-- 台南 -->
+    <div class="card" onclick="toggleContent('tainan-food')">
+        <div class="title">台南｜牛肉湯</div>
+        <div class="tag">美食小吃</div>
+        <div class="content" id="tainan-food">
+            台南清晨必吃代表，使用現宰溫體牛，肉質鮮嫩，湯頭甘甜。  
+            多家名店如阿堂、文章牛肉湯。
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleContent('tainan-spot')">
+        <div class="title">台南｜赤崁樓</div>
+        <div class="tag">景點</div>
+        <div class="content" id="tainan-spot">
+            台南最具代表的歷史古蹟之一，結合荷蘭、清朝文化特色。  
+            夜間點燈後更是氣氛十足。
+        </div>
+    </div>
+
+    <!-- 高雄 -->
+    <div class="card" onclick="toggleContent('kaohsiung-food')">
+        <div class="title">高雄｜鹽埕區鴨肉飯</div>
+        <div class="tag">美食小吃</div>
+        <div class="content" id="kaohsiung-food">
+            鴨肉飯香氣撲鼻，搭配鴨湯及小菜，是高雄人最愛的在地味。  
+            鹽埕老店林立，各具特色。
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleContent('kaohsiung-spot')">
+        <div class="title">高雄｜駁二藝術特區</div>
+        <div class="tag">景點</div>
+        <div class="content" id="kaohsiung-spot">
+            高雄最具文化活力的藝術園區，包含倉庫展館、裝置藝術與市集。  
+            周邊生活圈與港邊散步都十分愜意。
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleContent(id) {
+    const content = document.getElementById(id);
+    content.style.display = content.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
